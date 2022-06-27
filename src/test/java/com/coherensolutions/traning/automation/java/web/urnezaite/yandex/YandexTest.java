@@ -1,7 +1,7 @@
-package yandex;
+package com.coherensolutions.traning.automation.java.web.urnezaite.yandex;
 
+import com.coherensolutions.traning.automation.java.web.urnezaite.yandex.Locators;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
