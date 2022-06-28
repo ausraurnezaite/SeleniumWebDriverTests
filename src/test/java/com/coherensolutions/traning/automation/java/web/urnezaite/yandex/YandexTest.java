@@ -1,7 +1,9 @@
 package com.coherensolutions.traning.automation.java.web.urnezaite.yandex;
 
-import com.coherensolutions.traning.automation.java.web.urnezaite.yandex.Locators;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,13 +19,13 @@ public class YandexTest {
     final String password = "seleniumtestaccount";
 
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         driver.get("https://mail.yandex.com/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         driver.manage().window().maximize();
     }
 
-    void logIn() {
+    public void logIn() {
         driver.findElement(Locators.logInOption).click();
         driver.findElement(Locators.usernameInput).sendKeys(userName);
         driver.findElement(Locators.logInButton).click();
@@ -33,7 +35,7 @@ public class YandexTest {
     }
 
     @Test
-    void testLogInPage() {
+    public void testLogInPage() {
         logIn();
         Assertions.assertTrue(driver.findElement(Locators.userInfo).isDisplayed());
         Assertions.assertTrue(driver.findElement(Locators.mailLogo).isDisplayed());
@@ -60,7 +62,7 @@ public class YandexTest {
     }
 
     @AfterEach
-    void cleanUp() {
+    public void cleanUp() {
         driver.quit();
     }
 }
